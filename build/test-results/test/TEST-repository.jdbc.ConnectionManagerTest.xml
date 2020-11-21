@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="repository.jdbc.ConnectionManagerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-14T09:25:01" hostname="altSign" time="0.07">
+  <properties/>
+  <testcase name="testCreation()" classname="repository.jdbc.ConnectionManagerTest" time="0.07"/>
+  <system-out><![CDATA[ID: 100, Age: 18, First: Zara, Last: Ali
+ID: 101, Age: 25, First: Mahnaz, Last: Fatma
+ID: 102, Age: 30, First: Zaid, Last: Khan
+ID: 103, Age: 28, First: Sumit, Last: Mittal
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
