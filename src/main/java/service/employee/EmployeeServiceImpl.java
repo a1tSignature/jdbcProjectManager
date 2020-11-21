@@ -3,18 +3,8 @@ package service.employee;
 import employee.Employee;
 import employee.EmployeeImpl;
 import lombok.AllArgsConstructor;
-import position.BasePosition;
-import position.analyst.Analyst;
-import position.developer.backend.AndroidBackendDeveloper;
-import position.developer.backend.IosBackendDeveloper;
-import position.developer.backend.JavaServerDeveloper;
-import position.developer.frontend.AndroidFrontendDeveloper;
-import position.developer.frontend.IosFrontendDeveloper;
 import position.developer.specification.PositionType;
-import position.developer.specification.Specification;
-import position.tester.Tester;
 import repository.employee.EmployeeRepository;
-import repository.employee.EmployeeRepositoryImpl;
 import sprint.Sprint;
 
 import java.util.HashMap;
