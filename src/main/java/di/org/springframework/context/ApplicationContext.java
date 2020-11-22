@@ -1,5 +1,8 @@
 package di.org.springframework.context;
 
+import di.com.a1tSign.CommonAnnotationBeanPostProcessor;
+import di.com.a1tSign.CustomPostProcessor;
+import di.com.a1tSign.ProductService;
 import di.org.springframework.context.event.ContextClosedEvent;
 import di.org.springframework.beans.factory.BeanFactory;
 
@@ -16,9 +19,17 @@ public class ApplicationContext {
         System.out.println("******Context is under construction******");
 
         beanFactory.instantiate(basePackage);
+        beanFactory.addPostProcessor(new CustomPostProcessor());
+        beanFactory.addPostProcessor(new CommonAnnotationBeanPostProcessor());
         beanFactory.populateProperties();
         beanFactory.injectBeanNames();
+        beanFactory.injectBeanFactories();
         beanFactory.initializeBeans();
+
+//        System.out.println(productService.getPromotionsService());
+
+//        System.out.println("Bean name = " + productService.getPromotionsService().getBeanName());
+//        System.out.println("Factory name = " + productService.getPromotionsService().getBeanFactory());
     }
 
     public void close() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {

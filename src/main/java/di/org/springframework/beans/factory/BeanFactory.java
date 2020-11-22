@@ -1,10 +1,14 @@
 package di.org.springframework.beans.factory;
 
+import di.ScanningTools;
 import di.org.springframework.beans.factory.annotation.Autowired;
 import di.org.springframework.beans.factory.annotation.javax.PreDestroy;
 import di.org.springframework.beans.factory.annotation.javax.Resource;
 import di.org.springframework.beans.factory.config.BeanPostProcessor;
 import di.org.springframework.beans.factory.stereotype.Component;
+import di.org.springframework.beans.factory.stereotype.Repository;
+import di.org.springframework.beans.factory.stereotype.Service;
+import di.org.springframework.beans.factory.stereotype.priority.Primary;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,8 +19,9 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
-@SuppressWarnings("deprecated")
-public class BeanFactory {
+@SuppressWarnings ("deprecated")
+//TODO: include di container into di.com.a1tSign.projectManager.project
+public class BeanFactory extends ScanningTools {
 
     private Map<String, Object> singletons = new HashMap<>();
     private List<BeanPostProcessor> postProcessors = new ArrayList<>();
@@ -40,35 +45,42 @@ public class BeanFactory {
     public void instantiate(String basePackage) {
 
         try {
-
             ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 
-            String path = basePackage.replace('.', '/');
-            Enumeration<URL> resources = classLoader.getResources(path);
+            for(String path : paths) {
+                //String path = basePackage.replace('.', '/');
+                Enumeration<URL> resources = classLoader.getResources(path);
+                Package[] folders = classLoader.getDefinedPackages();
 
-            while (resources.hasMoreElements()) {
-                URL resource = resources.nextElement();
+                while (resources.hasMoreElements()) {
+                    URL resource = resources.nextElement();
 
-                File file = new File(resource.toURI());
+                    File file = new File(resource.toURI());
 
-                for (File classFile : Objects.requireNonNull(file.listFiles())) {
-                    String fileName = classFile.getName();
+                    for (File classFile : Objects.requireNonNull(file.listFiles())) {
+                        String fileName = classFile.getName();
 
-                    if (fileName.endsWith(".class")) {
-                        String className = fileName.substring(0, fileName.lastIndexOf("."));
+                        if (fileName.endsWith(".class")) {
+                            String className = fileName.substring(0, fileName.lastIndexOf("."));
 
-                        Class<?> classObject = Class.forName(basePackage + "." + className);
+                            String name = path;
 
-                        if (classObject.isAnnotationPresent(Component.class)) {
-                            System.out.println("Component: " + classObject);
+                            Class<?> classObject = Class.forName(name.replace("/", ".") + "." + className);
 
-                            Object instance = classObject.newInstance();
-                            String beanName = className.substring(0, 1).toLowerCase() + className.substring(1);
-                            singletons.put(beanName, instance);
+                            if (classObject.isAnnotationPresent(Primary.class) && (
+                                    classObject.isAnnotationPresent(Component.class)
+                                            || classObject.isAnnotationPresent(Repository.class)
+                                            || classObject.isAnnotationPresent(Service.class))) {
+                                System.out.println("Component: " + classObject);
+
+                                Object instance = classObject.newInstance();
+                                String beanName = className.substring(0, 1).toLowerCase() + className.substring(1);
+                                singletons.put(beanName, instance);
+                            }
                         }
                     }
-                }
 
+                }
             }
 
         } catch (IOException | URISyntaxException | ClassNotFoundException
@@ -84,14 +96,16 @@ public class BeanFactory {
             for (Field field : object.getClass().getDeclaredFields()) {
                 if (field.isAnnotationPresent(Autowired.class)) {
 
-                    for (Object dependency : singletons.values()) {
-                        if (dependency.getClass().equals(field.getType())) {
+                    for (String dependency : singletons.keySet()) {
+                        if (dependency.toLowerCase().equals(field.getName().toLowerCase())) {
 
                             String setterName = "set" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1);
                             System.out.println("Setter name = " + setterName);
 
-                            Method setter = object.getClass().getMethod(setterName, dependency.getClass());
-                            setter.invoke(object, dependency);
+                            Method setter = object.getClass().getMethod(setterName, singletons.get(dependency).getClass());
+
+                            Object obj = singletons.get(dependency);
+                            setter.invoke(object, singletons.get(dependency));
                         }
                     }
                 } else if (field.isAnnotationPresent(Resource.class)) { // Custom realization of @Resource annotation injection
@@ -118,25 +132,25 @@ public class BeanFactory {
         }
     }
 
-    public void injectBeanNames(){
+    public void injectBeanNames() {
         for (String name : singletons.keySet()) {
             Object bean = singletons.get(name);
-            if(bean instanceof BeanNameAware){
+            if (bean instanceof BeanNameAware) {
                 ((BeanNameAware) bean).setBeanName(name);
             }
         }
     }
 
-    public void injectBeanFactories(){
+    public void injectBeanFactories() {
         for (String name : singletons.keySet()) {
             Object bean = singletons.get(name);
-            if(bean instanceof BeanFactoryAware){
+            if (bean instanceof BeanFactoryAware) {
                 ((BeanFactoryAware) bean).setBeanFactory(this);
             }
         }
     }
 
-    public void initializeBeans(){
+    public void initializeBeans() {
         for (String name : singletons.keySet()) {
             Object bean = singletons.get(name);
 
@@ -155,7 +169,7 @@ public class BeanFactory {
     public void close() {
         for (Object bean : singletons.values()) {
             Method[] met = bean.getClass().getMethods();
-            for (Method method : bean.getClass().getMethods()) {
+            for (Method method : met) {
                 if (method.isAnnotationPresent(PreDestroy.class)) {
                     try {
                         method.invoke(bean);

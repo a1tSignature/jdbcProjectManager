@@ -4,5 +4,9 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="di.projectManager_main" target="11" />
+      <module name="di.projectManager_test" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

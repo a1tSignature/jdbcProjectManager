@@ -6,10 +6,12 @@ import di.org.springframework.beans.factory.BeanNameAware;
 import di.org.springframework.beans.factory.DisposableBean;
 import di.org.springframework.beans.factory.annotation.javax.PostConstruct;
 import di.org.springframework.beans.factory.stereotype.Component;
+import di.org.springframework.beans.factory.stereotype.priority.Primary;
 import di.org.springframework.context.ApplicationListener;
 import di.org.springframework.context.event.ContextClosedEvent;
 
 @Component
+@Primary
 public class PromotionsService implements BeanNameAware, BeanFactoryAware, DisposableBean,
         ApplicationListener<ContextClosedEvent> {
 
