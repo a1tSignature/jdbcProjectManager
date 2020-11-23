@@ -18,10 +18,20 @@ import static org.junit.jupiter.api.Assertions.*;
 public class H2jdbcEmployeeEntityManagerTest {
 
     private static H2jdbcEmployeeEntityManagerImpl h2jdbcEmployeeEntityManager;
+    private static EmployeeImpl testEmployee;
 
     @BeforeAll
     static void instantiate() {
         h2jdbcEmployeeEntityManager = new H2jdbcEmployeeEntityManagerImpl();
+
+        EmployeeBuilder builder = new EmployeeBuilderImpl();
+        builder.setName("Alex");
+        builder.setSurname("Vachovsky");
+        builder.setPatronymic("Igorevich");
+        builder.setPosition(new Analyst(PositionType.ANALYST, Specification.NONE));
+        builder.setRank(Rank.JUNIOR);
+
+        testEmployee = builder.getEmployee();
     }
 
     @Test
@@ -36,26 +46,35 @@ public class H2jdbcEmployeeEntityManagerTest {
     public void testSave() {
         int firstSize = h2jdbcEmployeeEntityManager.getEmployees().size();
 
-        EmployeeBuilder builder = new EmployeeBuilderImpl();
-        builder.setName("Alex");
-        builder.setSurname("Vachovsky");
-        builder.setPatronymic("Igorevich");
-        builder.setPosition(new Analyst(PositionType.ANALYST, Specification.NONE));
-        builder.setRank(Rank.JUNIOR);
-
-        EmployeeImpl first = builder.getEmployee();
-
-       h2jdbcEmployeeEntityManager.insertIntoEmployee(first);
-
+        h2jdbcEmployeeEntityManager.insertIntoEmployee(testEmployee);
         assertEquals(firstSize + 1, h2jdbcEmployeeEntityManager.getEmployees().size());
+        h2jdbcEmployeeEntityManager.deleteByNameAndSurname(testEmployee.getName(), testEmployee.getSurname());
     }
 
     @Test
     public void testDelete() {
+        h2jdbcEmployeeEntityManager.insertIntoEmployee(testEmployee);
+
         int firstSize = h2jdbcEmployeeEntityManager.getEmployees().size();
 
         h2jdbcEmployeeEntityManager.deleteByNameAndSurname("Alex", "Vachovsky");
 
         assertEquals(firstSize - 1, h2jdbcEmployeeEntityManager.getEmployees().size());
+    }
+
+    @Test
+    public void testUpdate() {
+        h2jdbcEmployeeEntityManager.insertIntoEmployee(testEmployee);
+
+        assertNotNull(h2jdbcEmployeeEntityManager.selectByNameAndSurname(testEmployee.getName(), testEmployee.getSurname()));
+
+        h2jdbcEmployeeEntityManager.updateEmployeeRank(testEmployee.getName(), testEmployee.getSurname(),
+                testEmployee.getPatronymic(), Rank.SENIOR);
+        assertEquals(Rank.SENIOR.name(), h2jdbcEmployeeEntityManager.
+                selectByNameAndSurname(testEmployee.getName(), testEmployee.getSurname()).get(5));
+
+        h2jdbcEmployeeEntityManager.deleteByNameAndSurname(testEmployee.getName(), testEmployee.getSurname());
+
+
     }
 }

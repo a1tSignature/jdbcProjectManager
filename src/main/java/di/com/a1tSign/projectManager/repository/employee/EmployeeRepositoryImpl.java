@@ -1,21 +1,19 @@
 package di.com.a1tSign.projectManager.repository.employee;
 
-import di.org.springframework.beans.factory.annotation.Autowired;
-import di.org.springframework.beans.factory.stereotype.Repository;
 import di.com.a1tSign.projectManager.employee.Employee;
 import di.com.a1tSign.projectManager.employee.EmployeeImpl;
-import di.org.springframework.beans.factory.stereotype.priority.Primary;
-import lombok.NoArgsConstructor;
 import di.com.a1tSign.projectManager.repository.jdbc.employee.H2jdbcEmployeeEntityManagerImpl;
 import di.com.a1tSign.projectManager.util.EmployeeParser;
+import di.org.springframework.beans.factory.annotation.Autowired;
+import di.org.springframework.beans.factory.stereotype.Repository;
+import di.org.springframework.beans.factory.stereotype.priority.Primary;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 @Repository
 @Primary
-
-@NoArgsConstructor
 public final class EmployeeRepositoryImpl implements EmployeeRepository {
 
     @Autowired

@@ -7,16 +7,15 @@ import di.com.a1tSign.projectManager.repository.employee.EmployeeRepository;
 import di.com.a1tSign.projectManager.repository.employee.EmployeeRepositoryImpl;
 import di.com.a1tSign.projectManager.sprint.Sprint;
 import di.org.springframework.beans.factory.annotation.Autowired;
-import di.org.springframework.beans.factory.stereotype.Component;
+import di.org.springframework.beans.factory.stereotype.Service;
 import di.org.springframework.beans.factory.stereotype.priority.Primary;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Component
+@SuppressWarnings("unused")
+@Service
 @Primary
 public final class EmployeeServiceImpl implements EmployeeService {
 

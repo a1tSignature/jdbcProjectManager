@@ -1,17 +1,18 @@
 package di.com.a1tSign.projectManager.repository.project;
 
-import di.org.springframework.beans.factory.annotation.Autowired;
-import di.org.springframework.beans.factory.stereotype.Component;
-import di.org.springframework.beans.factory.stereotype.priority.Primary;
-import lombok.AllArgsConstructor;
 import di.com.a1tSign.projectManager.project.Project;
 import di.com.a1tSign.projectManager.repository.jdbc.project.H2jdbcProjectEntityManagerImpl;
 import di.com.a1tSign.projectManager.util.ProjectParser;
-import lombok.NoArgsConstructor;
+import di.org.springframework.beans.factory.annotation.Autowired;
+import di.org.springframework.beans.factory.stereotype.Component;
+import di.org.springframework.beans.factory.stereotype.Repository;
+import di.org.springframework.beans.factory.stereotype.priority.Primary;
 
 import java.util.List;
 import java.util.stream.Collectors;
-@Component
+
+@SuppressWarnings("unused")
+@Repository
 @Primary
 public final class ProjectRepositoryImpl implements ProjectRepository {
 

@@ -167,11 +167,11 @@ public class BeanFactory extends ScanningTools {
 
     public void postConstruct() {
         for (Object bean : singletons.values()) {
-            Method[] met = bean.getClass().getMethods();
+            Method[] met = bean.getClass().getDeclaredMethods();
             for (Method method : met) {
                 if (method.isAnnotationPresent(PostConstruct.class)) {
-                    //Class<?> param = method.getParameterTypes()[0];
                     try {
+                        method.setAccessible(true);
                         method.invoke(bean);
                     } catch (IllegalAccessException | InvocationTargetException e) {
                         e.printStackTrace();

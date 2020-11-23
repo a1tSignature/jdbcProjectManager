@@ -34,8 +34,8 @@ public final class EmployeeParser {
     private static PositionType parsePositionType(String position) {
         PositionType positionType = null;
         var list = PositionType.values();
-        for(PositionType pos : list) {
-            if(pos.name().equalsIgnoreCase(position)) positionType = pos;
+        for (PositionType pos : list) {
+            if (pos.name().equalsIgnoreCase(position)) positionType = pos;
         }
 
         return positionType;
@@ -44,8 +44,8 @@ public final class EmployeeParser {
     private static Specification parseSpecification(String position) {
         Specification positionType = null;
         var list = Specification.values();
-        for(Specification pos : list) {
-            if(pos.name().equalsIgnoreCase(position)) positionType = pos;
+        for (Specification pos : list) {
+            if (pos.name().equalsIgnoreCase(position)) positionType = pos;
         }
 
         return positionType;
@@ -54,8 +54,8 @@ public final class EmployeeParser {
     private static Rank parseRank(String position) {
         Rank positionType = null;
         var list = Rank.values();
-        for(Rank pos : list) {
-            if(pos.name().equalsIgnoreCase(position)) positionType = pos;
+        for (Rank pos : list) {
+            if (pos.name().equalsIgnoreCase(position)) positionType = pos;
         }
 
         return positionType;
@@ -75,8 +75,7 @@ public final class EmployeeParser {
                 return new IosBackendDeveloper(positionType, specification);
 
             else return new JavaServerDeveloper(positionType, specification);
-        }
-        else {
+        } else {
             if (specification == Specification.ANDROID)
                 return new AndroidFrontendDeveloper(positionType, specification);
             else

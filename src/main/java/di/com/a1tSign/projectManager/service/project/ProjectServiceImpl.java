@@ -5,13 +5,13 @@ import di.com.a1tSign.projectManager.repository.project.ProjectRepository;
 import di.com.a1tSign.projectManager.repository.project.ProjectRepositoryImpl;
 import di.com.a1tSign.projectManager.sprint.Sprint;
 import di.org.springframework.beans.factory.annotation.Autowired;
-import di.org.springframework.beans.factory.stereotype.Component;
+import di.org.springframework.beans.factory.stereotype.Service;
 import di.org.springframework.beans.factory.stereotype.priority.Primary;
-import lombok.AllArgsConstructor;
 
 import java.util.List;
 
-@Component
+@SuppressWarnings("unused")
+@Service
 @Primary
 public final class ProjectServiceImpl implements ProjectService {
 

@@ -1,6 +1,7 @@
 package di.com.a1tSign.projectManager.repository.jdbc.employee;
 
 import di.com.a1tSign.projectManager.employee.EmployeeImpl;
+import di.com.a1tSign.projectManager.employee.Rank;
 import di.com.a1tSign.projectManager.repository.jdbc.info.JdbcDataSourceInfo;
 import di.org.springframework.beans.factory.stereotype.Component;
 import di.org.springframework.beans.factory.stereotype.priority.Primary;
@@ -85,7 +86,7 @@ public final class H2jdbcEmployeeEntityManagerImpl extends JdbcDataSourceInfo {
                     "PRIMARY KEY (id))";
             statement.executeUpdate(sql);
 
-            sql ="CREATE TABLE IF NOT EXISTS project_type " +
+            sql = "CREATE TABLE IF NOT EXISTS project_type " +
                     "(project_id INTEGER NOT NULL, " +
                     "type_id INTEGER NOT NULL, " +
                     "CONSTRAINT project_id_fk " +
@@ -116,52 +117,22 @@ public final class H2jdbcEmployeeEntityManagerImpl extends JdbcDataSourceInfo {
             Class.forName(driver);
             statement = connection.createStatement();
 
-            String sql = "SELECT * FROM rank";
-            ResultSet set = statement.executeQuery(sql);
-
-            while (set.next()) {
-                int id = set.getInt("id");
-                String name = set.getString("rank_name");
-
-                System.out.println("id: " + id);
-                System.out.println("name: " + name);
-            }
-
-
-            sql = "SELECT DISTINCT name, surname, patronymic, pos.position_name, ra.rank_name, sp.specification_name FROM employee e " +
+            String sql = "SELECT DISTINCT name, surname, patronymic, pos.position_name, ra.rank_name, sp.specification_name FROM employee e " +
                     "INNER JOIN employee_position p ON e.id = p.employee_id " +
                     "INNER JOIN position pos ON p.position_id = pos.id " +
                     "INNER JOIN employee_rank r ON e.id = r.employee_id " +
                     "INNER JOIN rank ra ON r.rank_id = ra.id " +
                     "INNER JOIN employee_specification s ON e.id = s.employee_id " +
                     "INNER JOIN specification sp ON s.specification_id = sp.id";
-            set = statement.executeQuery(sql);
+            ResultSet set = statement.executeQuery(sql);
 
             while (set.next()) {
                 List<String> ls = new ArrayList<>();
                 String name = set.getString("name");
-                ls.add(name);
                 String surname = set.getString("surname");
-                ls.add(surname);
-                String patronymic = set.getString("patronymic");
-                ls.add(patronymic);
-                String position = set.getString("position_name");
-                ls.add(position);
-                String specification = set.getString("specification_name");
-                ls.add(specification);
-                String rank = set.getString("rank_name");
-                ls.add(rank);
+                collectEmployee(name, surname, set, ls);
 
                 ans.add(ls);
-
-                System.out.println("name: " + name);
-                System.out.println("surname: " + surname);
-                System.out.println("patronymic: " + patronymic);
-                System.out.println("pos: " + position);
-                System.out.println("rank: " + rank);
-                System.out.println("spec: " + specification);
-                System.out.println();
-
             }
 
         } catch (SQLException |
@@ -381,5 +352,107 @@ public final class H2jdbcEmployeeEntityManagerImpl extends JdbcDataSourceInfo {
                 sql.printStackTrace();
             }
         }
+    }
+
+    public void updateEmployeeRank(String name, String surname, String patronymic, Rank rank) {
+        PreparedStatement statement = null;
+
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(url + dbName, user, password);
+        } catch (SQLException ex) {
+            System.err.println("Cant establish connection in method updateEmployeeRank");
+        }
+
+        try  {
+            Class.forName(driver);
+
+            assert connection != null;
+            connection.setAutoCommit(false);
+
+            String sql = "SELECT employee.id FROM employee WHERE name = ? AND surname = ? AND patronymic = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, name);
+            statement.setString(2, surname);
+            statement.setString(3, patronymic);
+
+            ResultSet rs = statement.executeQuery();
+            rs.next();
+            int employeeId = rs.getInt("id");
+
+            sql = "UPDATE employee_rank SET rank_id = (SELECT rank.id FROM rank WHERE rank_name = ?) WHERE employee_id = ?";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, rank.name());
+            statement.setInt(2, employeeId);
+            statement.addBatch();
+            statement.executeBatch();
+
+            connection.commit();
+
+        } catch (SQLException |
+                ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            assert statement != null;
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public List<String> selectByNameAndSurname(String name, String surname) {
+
+        PreparedStatement statement = null;
+        List<String> list = new ArrayList<>();
+
+        try (Connection connection = DriverManager.getConnection(url + dbName, user, password)) {
+            Class.forName(driver);
+
+            String sql = "SELECT DISTINCT name, surname, patronymic, pos.position_name, ra.rank_name, sp.specification_name FROM employee e " +
+                    "INNER JOIN employee_position p ON e.id = p.employee_id " +
+                    "INNER JOIN position pos ON p.position_id = pos.id " +
+                    "INNER JOIN employee_rank r ON e.id = r.employee_id " +
+                    "INNER JOIN rank ra ON r.rank_id = ra.id " +
+                    "INNER JOIN employee_specification s ON e.id = s.employee_id " +
+                    "INNER JOIN specification sp ON s.specification_id = sp.id " +
+                    "WHERE name = ? AND surname = ?";
+
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, name);
+            statement.setString(2, surname);
+
+            ResultSet rs = statement.executeQuery();
+            rs.next();
+
+            collectEmployee(name, surname, rs, list);
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert statement != null;
+                statement.close();
+            } catch (SQLException sql) {
+                sql.printStackTrace();
+            }
+        }
+
+        return list;
+    }
+
+    private void collectEmployee(String name, String surname, ResultSet rs, List<String> list) throws SQLException {
+        list.add(name);
+        list.add(surname);
+        String patronymic = rs.getString("patronymic");
+        list.add(patronymic);
+        String position = rs.getString("position_name");
+        list.add(position);
+        String specification = rs.getString("specification_name");
+        list.add(specification);
+        String rank = rs.getString("rank_name");
+        list.add(rank);
     }
 }
