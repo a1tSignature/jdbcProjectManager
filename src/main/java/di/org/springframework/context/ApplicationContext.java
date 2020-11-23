@@ -1,8 +1,7 @@
 package di.org.springframework.context;
 
-import di.com.a1tSign.CommonAnnotationBeanPostProcessor;
-import di.com.a1tSign.CustomPostProcessor;
-import di.com.a1tSign.ProductService;
+import di.com.a1tSign.projectManager._old.CommonAnnotationBeanPostProcessor;
+import di.com.a1tSign.projectManager._old.CustomPostProcessor;
 import di.org.springframework.context.event.ContextClosedEvent;
 import di.org.springframework.beans.factory.BeanFactory;
 

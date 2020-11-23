@@ -1,4 +1,4 @@
-package di.com.a1tSign;
+package di.com.a1tSign.projectManager._old;
 
 import di.org.springframework.beans.factory.annotation.Autowired;
 import di.org.springframework.beans.factory.stereotype.Component;

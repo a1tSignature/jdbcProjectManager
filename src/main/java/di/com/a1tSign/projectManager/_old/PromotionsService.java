@@ -1,4 +1,4 @@
-package di.com.a1tSign;
+package di.com.a1tSign.projectManager._old;
 
 import di.org.springframework.beans.factory.BeanFactory;
 import di.org.springframework.beans.factory.BeanFactoryAware;
@@ -10,6 +10,7 @@ import di.org.springframework.beans.factory.stereotype.priority.Primary;
 import di.org.springframework.context.ApplicationListener;
 import di.org.springframework.context.event.ContextClosedEvent;
 
+@SuppressWarnings("unused")
 @Component
 @Primary
 public class PromotionsService implements BeanNameAware, BeanFactoryAware, DisposableBean,

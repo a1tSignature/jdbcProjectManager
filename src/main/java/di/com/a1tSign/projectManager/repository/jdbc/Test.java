@@ -10,8 +10,6 @@ import di.com.a1tSign.projectManager.project.Project;
 import di.com.a1tSign.projectManager.project.ProjectType;
 import di.com.a1tSign.projectManager.repository.jdbc.employee.H2jdbcEmployeeEntityManagerImpl;
 import di.com.a1tSign.projectManager.repository.jdbc.project.H2jdbcProjectEntityManagerImpl;
-import di.com.a1tSign.projectManager.repository.project.ProjectRepository;
-import di.com.a1tSign.projectManager.repository.project.ProjectRepositoryImpl;
 import di.com.a1tSign.projectManager.service.employee.EmployeeService;
 import di.com.a1tSign.projectManager.service.employee.EmployeeServiceImpl;
 import di.org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,8 @@ import di.org.springframework.beans.factory.stereotype.priority.Primary;
 import di.org.springframework.context.ApplicationContext;
 
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 @Primary

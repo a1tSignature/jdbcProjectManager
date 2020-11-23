@@ -94,8 +94,11 @@ public final class H2jdbcEmployeeEntityManagerImpl extends JdbcDataSourceInfo {
                     "FOREIGN KEY (type_id) REFERENCES type (id) ON DELETE CASCADE)";
             statement.executeUpdate(sql);
 
-//            sql = "CREATE TABLE IF NOT EXISTS project_info " +
-//                    "()"
+//            sql = "CREATE TABLE IF NOT EXISTS project_ramining_time " +
+//                    "(project_id INTEGER NOT NULL, " +
+//                    "time INTEGER NOT NULL, " +
+//                    "CONSTRAINT project_id_fk_time " +
+//                    "FOREIGH KEY (project_id) REFERENCES project (id) ON DELETE CASCADE)";
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
