@@ -11,9 +11,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Component
 @Primary
 public final class ProjectRepositoryImpl implements ProjectRepository {

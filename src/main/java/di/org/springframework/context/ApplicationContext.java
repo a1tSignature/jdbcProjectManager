@@ -25,6 +25,7 @@ public class ApplicationContext {
         beanFactory.injectBeanNames();
         beanFactory.injectBeanFactories();
         beanFactory.initializeBeans();
+        beanFactory.postConstruct();
 
 //        System.out.println(productService.getPromotionsService());
 

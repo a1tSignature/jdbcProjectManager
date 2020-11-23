@@ -2,90 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69f87a36-b4b0-473e-adc2-6256189125fa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/ScanningTools.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/jdbc/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/org/springframework/beans/factory/stereotype/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/org/springframework/beans/factory/stereotype/priority/Primary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/di/com/a1tSign/projectManager/manager/ConsoleManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/employee/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/employee/EmployeeImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/employee/Rank.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/employee/builder/EmployeeBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/employee/builder/EmployeeBuilderImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/position/BaseAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/position/BasePosition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/position/developer/specification/PositionType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/position/developer/specification/Specification.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/repository/jdbc/ConnectionManagerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectManager.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/PromotionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/PromotionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/di/ScanningTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/ScanningTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/manager/ConsoleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/manager/ConsoleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/jdbc/employee/H2jdbcEmployeeEntityManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/jdbc/employee/H2jdbcEmployeeEntityManagerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/di/org/springframework/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/org/springframework/beans/factory/BeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/di/org/springframework/context/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/org/springframework/context/ApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/employee/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employee/EmployeeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/employee/EmployeeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employee/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/employee/Rank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employee/builder/EmployeeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/employee/builder/EmployeeBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employee/builder/EmployeeBuilderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/employee/builder/EmployeeBuilderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/ConsoleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/manager/ConsoleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/BaseAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/BaseAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/BasePosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/BasePosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/analyst/Analyst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/analyst/Analyst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/analyst/AnalystAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/analyst/AnalystAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/DeveloperAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/DeveloperAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/backend/AndroidBackendDeveloper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/backend/AndroidBackendDeveloper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/backend/BackendDeveloper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/backend/BackendDeveloper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/backend/IosBackendDeveloper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/backend/IosBackendDeveloper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/backend/JavaServerDeveloper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/backend/JavaServerDeveloper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/frontend/AndroidFrontendDeveloper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/frontend/AndroidFrontendDeveloper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/frontend/FrontendDeveloper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/frontend/FrontendDeveloper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/frontend/IosFrontendDeveloper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/frontend/IosFrontendDeveloper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/specification/PositionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/specification/PositionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/developer/specification/Specification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/developer/specification/Specification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/tester/TestAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/tester/TestAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/position/tester/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/position/tester/Tester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/ProjectType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/project/ProjectType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/builder/ProjectBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/project/builder/ProjectBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/builder/ProjectBuilderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/project/builder/ProjectBuilderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/employee/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/employee/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/employee/EmployeeRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/employee/EmployeeRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/jdbc/JdbcDataSourceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/jdbc/info/JdbcDataSourceInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/jdbc/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/jdbc/employee/H2jdbcEmployeeEntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/jdbc/employee/H2jdbcEmployeeEntityManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/jdbc/project/H2jdbcProjectEntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/jdbc/project/H2jdbcProjectEntityManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/project/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/project/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/project/ProjectRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/repository/project/ProjectRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/employee/EmployeeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/service/employee/EmployeeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/employee/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/service/employee/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/employee/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/service/employee/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/project/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/service/project/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/project/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/service/project/ProjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sprint/Sprint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/sprint/Sprint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/EmployeeParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/util/EmployeeParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ProjectParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/util/ProjectParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/manager/ConsoleManagerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/repository/jdbc/ConnectionManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/di/com/a1tSign/projectManager/repository/jdbc/ConnectionManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/employee/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/di/com/a1tSign/projectManager/service/employee/EmployeeServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/project/ProjectServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/di/com/a1tSign/projectManager/service/project/ProjectServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +276,7 @@
       <workItem from="1605451636983" duration="20604000" />
       <workItem from="1605563108320" duration="5440000" />
       <workItem from="1605942242677" duration="3805000" />
-      <workItem from="1605950518344" duration="25953000" />
+      <workItem from="1605950518344" duration="32809000" />
     </task>
     <servers />
   </component>
@@ -375,10 +304,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605595218256" />
-    <state x="834" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1606078979393">
+    <state x="834" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1606120949229">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="834" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606078979393" />
+    <state x="834" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606120949229" />
     <state x="498" y="180" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606061675711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -407,22 +336,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605946066049" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1606080073611">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1606123158492">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606080073611" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1606080073611">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606123158492" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1606123158492">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606080073611" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1606080073611">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606123158492" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1606123158492">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606080073611" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1606080073611">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606123158492" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1606123158492">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606080073611" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606123158492" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1605356630807">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -443,10 +372,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605540131121" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605352648535">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606122821272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605352648535" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1606122821272" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -462,14 +391,9 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/manager/ConsoleManager.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/di/org/springframework/beans/factory/BeanFactory.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="46" />
+          <url>file://$PROJECT_DIR$/src/main/java/di/com/a1tSign/projectManager/service/employee/EmployeeServiceImpl.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -479,6 +403,7 @@
         <watch expression="((Database)((Session)((LocalResultImpl)((JdbcResultSet)set).result).session).database).fileEncryptionKey" language="JAVA" custom="org.h2.engine.Session,org.h2.result.LocalResultImpl,org.h2.engine.Database,org.h2.jdbc.JdbcResultSet" />
         <watch expression="((Database)((Session)((LocalResultImpl)((JdbcResultSet)set).result).session).database).fileEncryptionKey" language="JAVA" custom="org.h2.engine.Session,org.h2.result.LocalResultImpl,org.h2.engine.Database,org.h2.jdbc.JdbcResultSet" />
         <watch expression="((TableFilter)((ExpressionColumn)((java.util.ArrayList)((Select)((TableFilter)((ExpressionColumn)((org.h2.expression.Expression[])((LocalResultImpl)((JdbcResultSet)set).result).expressions)[1]).columnResolver).select).expressions).get(0)).columnResolver).select" custom="org.h2.expression.ExpressionColumn,org.h2.expression.Expression[],org.h2.command.dml.Select,org.h2.result.LocalResultImpl,org.h2.jdbc.JdbcResultSet,java.util.ArrayList,org.h2.table.TableFilter" />
+        <watch expression="met[8]" />
       </configuration>
     </watches-manager>
   </component>

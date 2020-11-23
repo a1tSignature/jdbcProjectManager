@@ -11,12 +11,19 @@ import di.org.springframework.beans.factory.stereotype.Component;
 import di.org.springframework.beans.factory.stereotype.priority.Primary;
 import di.org.springframework.context.ApplicationContext;
 
-import java.sql.SQLException;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * @author a1tSign
+ */
+//TODO: group @Component and @Primary (optional)
+//TODO: add CRUD operations which don't exist, check transactional level and optimize sql queries (optional)
+//TODO: try to abstract away paths of scanning components (di), read about recursive folder scanning
+//TODO: Delete unused test components (di)
 @Component
 @Primary
+@SuppressWarnings("unused")
 public class Main {
 
     @Autowired
@@ -26,7 +33,7 @@ public class Main {
         Main.consoleManager = consoleManager;
     }
 
-    public static void main(String[] args) throws SQLException, ReflectiveOperationException {
+    public static void main(String[] args) throws ReflectiveOperationException {
 
         ApplicationContext applicationContext = new ApplicationContext("");
         Scanner sc = new Scanner(System.in);
@@ -52,12 +59,13 @@ public class Main {
     private static void start(Scanner sc, int deadline) {
 
         consoleManager.setDaysBeforeDeadline(deadline);
+        consoleManager.setRemainingTime();
         final EmployeeService employeeService = consoleManager.getEmployeeServiceImpl();
         final ProjectService projectService = consoleManager.getProjectServiceImpl();
 
         consoleManager.showProjects();
 
-        System.out.println("Choose di.com.a1tSign.projectManager.project");
+        System.out.println("Choose project");
 
         int numOfProject = sc.nextInt();
 
@@ -77,7 +85,5 @@ public class Main {
 
             System.out.println("Time allocated for the di.com.a1tSign.projectManager.project: " + projectService.getFullTime(project));
         }
-
-        //sc.close();
     }
 }

@@ -15,6 +15,7 @@ import di.org.springframework.beans.factory.stereotype.priority.Primary;
 import java.util.List;
 import java.util.Map;
 
+//TODO: convert to a REST service?
 @SuppressWarnings("unused")
 @Component
 @Primary
@@ -31,7 +32,7 @@ public class ConsoleManager {
     private  List<Project> projects;
     private Map<Employee, Integer> remainingTime;
 
-    private int daysBeforeDeadline = 10;
+    private int daysBeforeDeadline;
 
     public void setDaysBeforeDeadline(int daysBeforeDeadline) {
         this.daysBeforeDeadline = daysBeforeDeadline;
@@ -53,6 +54,11 @@ public class ConsoleManager {
         return employeeServiceImpl;
     }
 
+    //@PostConstruct
+    public void setRemainingTime() {
+        this.remainingTime = employeeServiceImpl.setStartRemainingTime(employeeServiceImpl.findAll(), daysBeforeDeadline);
+    }
+
     public Map<Employee, Integer> getRemainingTime() {
         return remainingTime;
     }
@@ -61,7 +67,7 @@ public class ConsoleManager {
 
 
         if (numberOfProject < 0 || numberOfProject > projects.size()) {
-            System.out.println("Incorrect number of di.com.a1tSign.projectManager.project");
+            System.out.println("Incorrect number of project");
             return null;
         }
 
@@ -71,6 +77,7 @@ public class ConsoleManager {
         System.out.println("Sprints: ");
         showSprints(project);
 
+        //remainingTime = employeeServiceImpl.setStartRemainingTime(employeeServiceImpl.findAll(), daysBeforeDeadline);
         return project;
     }
 
@@ -79,7 +86,6 @@ public class ConsoleManager {
         System.out.println("####################################");
         System.out.println(sprint.getName());
 
-        remainingTime = employeeServiceImpl.setStartRemainingTime(employeeServiceImpl.findAll(), daysBeforeDeadline);
         Map<Employee, Integer> spr1 = employeeServiceImpl.findByPositionType(sprint.getSprintType(), remainingTime);
         showEmployees(spr1);
 

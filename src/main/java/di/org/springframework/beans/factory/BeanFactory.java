@@ -2,6 +2,7 @@ package di.org.springframework.beans.factory;
 
 import di.ScanningTools;
 import di.org.springframework.beans.factory.annotation.Autowired;
+import di.org.springframework.beans.factory.annotation.javax.PostConstruct;
 import di.org.springframework.beans.factory.annotation.javax.PreDestroy;
 import di.org.springframework.beans.factory.annotation.javax.Resource;
 import di.org.springframework.beans.factory.config.BeanPostProcessor;
@@ -19,8 +20,11 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
-@SuppressWarnings ("deprecated")
-//TODO: include di container into di.com.a1tSign.projectManager.project
+@SuppressWarnings ({"deprecated", "unused"})
+//TODO: refactor and debug di system into project
+//TODO: delegate repository-bean, service-bean etc.. in several groups of beans.
+//TODO: find usages for @PostConstruct and @PreDestroy (optional)
+//TODO: remove @SuppressWarnings("deprecated"): find replacement for Class<?>#newInstance which is deprecated
 public class BeanFactory extends ScanningTools {
 
     private Map<String, Object> singletons = new HashMap<>();
@@ -47,11 +51,9 @@ public class BeanFactory extends ScanningTools {
         try {
             ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 
-            for(String path : paths) {
+            for (String path : paths) {
                 //String path = basePackage.replace('.', '/');
                 Enumeration<URL> resources = classLoader.getResources(path);
-                Package[] folders = classLoader.getDefinedPackages();
-
                 while (resources.hasMoreElements()) {
                     URL resource = resources.nextElement();
 
@@ -63,9 +65,7 @@ public class BeanFactory extends ScanningTools {
                         if (fileName.endsWith(".class")) {
                             String className = fileName.substring(0, fileName.lastIndexOf("."));
 
-                            String name = path;
-
-                            Class<?> classObject = Class.forName(name.replace("/", ".") + "." + className);
+                            Class<?> classObject = Class.forName(path.replace("/", ".") + "." + className);
 
                             if (classObject.isAnnotationPresent(Primary.class) && (
                                     classObject.isAnnotationPresent(Component.class)
@@ -104,7 +104,6 @@ public class BeanFactory extends ScanningTools {
 
                             Method setter = object.getClass().getMethod(setterName, singletons.get(dependency).getClass());
 
-                            Object obj = singletons.get(dependency);
                             setter.invoke(object, singletons.get(dependency));
                         }
                     }
@@ -162,6 +161,22 @@ public class BeanFactory extends ScanningTools {
             }
             for (BeanPostProcessor postProcessor : postProcessors) {
                 postProcessor.postProcessAfterInitialization(bean, name);
+            }
+        }
+    }
+
+    public void postConstruct() {
+        for (Object bean : singletons.values()) {
+            Method[] met = bean.getClass().getMethods();
+            for (Method method : met) {
+                if (method.isAnnotationPresent(PostConstruct.class)) {
+                    //Class<?> param = method.getParameterTypes()[0];
+                    try {
+                        method.invoke(bean);
+                    } catch (IllegalAccessException | InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
     }

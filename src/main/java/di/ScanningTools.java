@@ -1,5 +1,5 @@
 package di;
-
+//TODO: find the way to refactor this terrible code
 public abstract class ScanningTools {
     protected final String[] paths = {"di/com/a1tSign/projectManager",
             "di/com/a1tSign/projectManager/manager",
